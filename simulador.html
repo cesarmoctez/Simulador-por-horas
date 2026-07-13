@@ -27,7 +27,6 @@
         header { position: relative; margin-bottom: 30px; display: flex; justify-content: center; align-items: center; min-height: 50px; }
         h1 { margin: 0; color: var(--primary); font-size: 1.7rem; font-weight: 600; text-align: center; }
         
-        /* CONTROLES DE MONEDA SUPERIORES */
         .header-controls { position: absolute; right: 0; top: 50%; transform: translateY(-50%); display: flex; align-items: center; gap: 20px; background: var(--card-bg); padding: 10px 15px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); border: 1px solid var(--border-light); }
         .exchange-rate-container { display: flex; align-items: center; gap: 8px; }
         .exchange-rate-container label { margin: 0; font-size: 0.85rem; color: var(--primary); font-weight: 600; }
@@ -47,46 +46,44 @@
         .sidebar { width: 22%; float: left; background: var(--card-bg); padding: 25px 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.03); box-sizing: border-box; border: 1px solid var(--border-light); }
         .main-content { width: 76%; float: right; box-sizing: border-box; }
         
-        /* SELECTOR DE MODO */
         .mode-selector { display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; }
         .radio-btn { display: flex; align-items: center; gap: 8px; font-size: 0.85rem; font-weight: 500; cursor: pointer; }
         
-        /* TARJETAS */
-        .cards-container { width: 100%; margin-bottom: 20px; box-sizing: border-box; display: flex; justify-content: space-between; gap: 2%; }
-        .cost-card { width: 32%; background: var(--card-bg); padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.03); border-top: 4px solid var(--accent); box-sizing: border-box; display: flex; flex-direction: column; position: relative; border-left: 1px solid var(--border-light); border-right: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light); }
+        /* Ajuste para 4 tarjetas */
+        .cards-container { width: 100%; margin-bottom: 20px; box-sizing: border-box; display: flex; justify-content: space-between; gap: 1.5%; }
+        .cost-card { width: 23.5%; background: var(--card-bg); padding: 20px 15px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.03); border-top: 4px solid var(--accent); box-sizing: border-box; display: flex; flex-direction: column; position: relative; border-left: 1px solid var(--border-light); border-right: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light); }
         
+        .cost-card:nth-child(1) { border-top-color: #3498db; }
         .cost-card:nth-child(2) { border-top-color: #f39c12; }
-        .cost-card:nth-child(3) { border-top-color: #e74c3c; }
+        .cost-card:nth-child(3) { border-top-color: #9b59b6; } /* Nuevo color para 68 hrs */
+        .cost-card:nth-child(4) { border-top-color: #e74c3c; }
         
-        .cost-card h3 { margin-top: 0; font-size: 1.05rem; text-align: center; color: var(--primary); min-height: 25px; display: flex; align-items: center; justify-content: center; margin-bottom: 15px; font-weight: 600; }
+        .cost-card h3 { margin-top: 0; font-size: 1rem; text-align: center; color: var(--primary); min-height: 40px; display: flex; align-items: center; justify-content: center; margin-bottom: 15px; font-weight: 600; line-height: 1.2; }
         
         .card-content { flex-grow: 1; }
         
-        /* ACORDEONES Y DESGLOSE */
         .breakdown-group { margin-bottom: 5px; border-bottom: 1px solid #f0f0f0; }
         .breakdown-group:last-of-type { border-bottom: none; }
-        .breakdown-group summary { padding: 10px 5px; font-size: 0.85rem; font-weight: 500; cursor: pointer; display: flex; justify-content: space-between; outline: none; color: var(--primary); list-style: none; }
+        .breakdown-group summary { padding: 10px 2px; font-size: 0.80rem; font-weight: 500; cursor: pointer; display: flex; justify-content: space-between; outline: none; color: var(--primary); list-style: none; }
         .breakdown-group summary::-webkit-details-marker { display: none; }
-        .breakdown-group summary::before { content: '▶'; font-size: 0.65rem; margin-right: 10px; color: var(--accent); transition: transform 0.2s; display: inline-block; vertical-align: middle; }
+        .breakdown-group summary::before { content: '▶'; font-size: 0.60rem; margin-right: 6px; color: var(--accent); transition: transform 0.2s; display: inline-block; vertical-align: middle; }
         .breakdown-group[open] summary::before { transform: rotate(90deg); }
         
         .group-title { flex-grow: 1; text-align: left; }
         .group-total { color: var(--text-main); font-weight: 600; text-align: right; }
-        .breakdown-details { padding: 5px 5px 15px 45px; background: #fff; }
-        .breakdown-details p { display: flex; justify-content: space-between; margin: 4px 0; font-size: 0.8rem; font-weight: 400; color: var(--text-muted); position: relative; }
-        .breakdown-details p::before { content: "•"; position: absolute; left: -12px; color: #ccc; }
+        .breakdown-details { padding: 5px 5px 15px 25px; background: #fff; }
+        .breakdown-details p { display: flex; justify-content: space-between; margin: 4px 0; font-size: 0.75rem; font-weight: 400; color: var(--text-muted); position: relative; }
+        .breakdown-details p::before { content: "•"; position: absolute; left: -10px; color: #ccc; }
         .breakdown-details p span:first-child { text-align: left; }
         .breakdown-details p span:last-child { text-align: right; font-variant-numeric: tabular-nums; }
 
-        /* RESUMEN AL PIE DE LA TARJETA */
         .card-footer-stats { margin-top: 15px; padding-top: 15px; border-top: 1px dashed var(--border-light); display: flex; flex-direction: column; gap: 8px; margin-bottom: 10px; }
-        .stat-row { display: flex; justify-content: space-between; font-size: 0.85rem; color: var(--text-muted); }
+        .stat-row { display: flex; justify-content: space-between; font-size: 0.80rem; color: var(--text-muted); }
         .stat-row span:last-child { font-weight: 600; color: var(--primary); }
-        .highlight-workers { color: #27ae60 !important; background: #e8f8f5; padding: 2px 8px; border-radius: 4px; }
+        .highlight-workers { color: #27ae60 !important; background: #e8f8f5; padding: 2px 6px; border-radius: 4px; }
 
-        .total-neto { font-size: 1.4rem; font-weight: 700; text-align: center; margin-top: 5px; color: var(--primary); padding-bottom: 5px; }
+        .total-neto { font-size: 1.3rem; font-weight: 700; text-align: center; margin-top: 5px; color: var(--primary); padding-bottom: 5px; }
 
-        /* INPUTS Y FORMULARIOS */
         label { display: block; margin-bottom: 6px; font-weight: 400; font-size: 0.85rem; color: var(--text-main); }
         select, input[type="number"], input[type="text"] { width: 100%; padding: 8px 10px; margin-bottom: 18px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; font-size: 0.9rem; background-color: #fff; }
         .section-title { font-size: 0.95rem; border-bottom: 1px solid var(--border-light); padding-bottom: 8px; margin-top: 10px; margin-bottom: 18px; color: var(--primary); font-weight: 600; }
@@ -108,7 +105,7 @@
         <div class="header-controls">
             <div class="exchange-rate-container">
                 <label for="tipoCambio">Tipo de Cambio:</label>
-                <input type="number" id="tipoCambio" value="17.33" step="0.01" onchange="calcular()" onkeyup="calcular()">
+                <input type="number" id="tipoCambio" value="18.50" step="0.01" onchange="calcular()" onkeyup="calcular()">
             </div>
             <div class="currency-switch-container">
                 <span class="currency-label" id="lbl_mxn">MXN</span>
@@ -162,41 +159,46 @@
             <div class="cards-container clearfix" id="cardsWrapper">
                 
                 <div class="cost-card cost-card-1">
-                    <h3>Sin Horas Extra (48 Hrs)</h3>
+                    <h3>Sin Horas Extra<br>(48 Hrs)</h3>
                     <div class="card-content" id="content_0"></div>
-                    
                     <div class="card-footer-stats">
-                        <div class="stat-row"><span>Cantidad de trabajadores:</span> <span id="workers_0" class="highlight-workers">0</span></div>
+                        <div class="stat-row"><span>Trabajadores:</span> <span id="workers_0" class="highlight-workers">0</span></div>
                         <div class="stat-row"><span>Costo por Hora:</span> <span id="hora_0">$0.00</span></div>
-                        <div class="stat-row"><span>Horas Proyectadas:</span> <span id="horas_proy_0">0 hrs</span></div>
+                        <div class="stat-row"><span>Hrs Proyectadas:</span> <span id="horas_proy_0">0 hrs</span></div>
                     </div>
-                    
                     <div class="total-neto" id="neto_0">$0.00</div>
                 </div>
 
                 <div class="cost-card cost-card-2">
-                    <h3>Con 12 Hrs Extra (60 Hrs)</h3>
+                    <h3>Con 12 Hrs Extra<br>(60 Hrs)</h3>
                     <div class="card-content" id="content_12"></div>
-
                     <div class="card-footer-stats">
-                        <div class="stat-row"><span>Cantidad de trabajadores:</span> <span id="workers_12" class="highlight-workers">0</span></div>
+                        <div class="stat-row"><span>Trabajadores:</span> <span id="workers_12" class="highlight-workers">0</span></div>
                         <div class="stat-row"><span>Costo por Hora:</span> <span id="hora_12">$0.00</span></div>
-                        <div class="stat-row"><span>Horas Proyectadas:</span> <span id="horas_proy_12">0 hrs</span></div>
+                        <div class="stat-row"><span>Hrs Proyectadas:</span> <span id="horas_proy_12">0 hrs</span></div>
                     </div>
-
                     <div class="total-neto" id="neto_12">$0.00</div>
                 </div>
 
                 <div class="cost-card cost-card-3">
-                    <h3>Con 24 Hrs Extra (72 Hrs)</h3>
-                    <div class="card-content" id="content_24"></div>
-
+                    <h3>Con 20 Hrs Extra<br>(68 Hrs)</h3>
+                    <div class="card-content" id="content_20"></div>
                     <div class="card-footer-stats">
-                        <div class="stat-row"><span>Cantidad de trabajadores:</span> <span id="workers_24" class="highlight-workers">0</span></div>
-                        <div class="stat-row"><span>Costo por Hora:</span> <span id="hora_24">$0.00</span></div>
-                        <div class="stat-row"><span>Horas Proyectadas:</span> <span id="horas_proy_24">0 hrs</span></div>
+                        <div class="stat-row"><span>Trabajadores:</span> <span id="workers_20" class="highlight-workers">0</span></div>
+                        <div class="stat-row"><span>Costo por Hora:</span> <span id="hora_20">$0.00</span></div>
+                        <div class="stat-row"><span>Hrs Proyectadas:</span> <span id="horas_proy_20">0 hrs</span></div>
                     </div>
+                    <div class="total-neto" id="neto_20">$0.00</div>
+                </div>
 
+                <div class="cost-card cost-card-4">
+                    <h3>Con 24 Hrs Extra<br>(72 Hrs)</h3>
+                    <div class="card-content" id="content_24"></div>
+                    <div class="card-footer-stats">
+                        <div class="stat-row"><span>Trabajadores:</span> <span id="workers_24" class="highlight-workers">0</span></div>
+                        <div class="stat-row"><span>Costo por Hora:</span> <span id="hora_24">$0.00</span></div>
+                        <div class="stat-row"><span>Hrs Proyectadas:</span> <span id="horas_proy_24">0 hrs</span></div>
+                    </div>
                     <div class="total-neto" id="neto_24">$0.00</div>
                 </div>
             </div>
@@ -205,7 +207,7 @@
                 <h4>Notas y Consideraciones Operativas:</h4>
                 <ul>
                     <li>Escenarios considerados en el primer turno.</li>
-                    <li>Día de descanso los días sábados.</li>
+                    <li>Día de descanso los días sábados (Aplica para el escenario de 68 Hrs).</li>
                     <li>Se contempla máximo 72 horas pero con posibilidades de menor cantidad.</li>
                     <li>El subcontrato es no deducible sumado a defraudación fiscal por las legislaciones mexicanas, y TNG es responsable solidario de todos los trabajadores de la compañía subcontratistas.</li>
                 </ul>
@@ -214,7 +216,21 @@
     </div>
 
     <script>
-        const tarifas = {"A-1":{"0":{"Salario Base":{"Horas Normales":3050.58,"Importe Septimo día":508.43},"Tiempo Extra":{"Horas Extras Dobles":0.0,"Horas Extras Triples":0.0},"Variables":{"Gratificacion":0.0,"Bono no accidente":26.25},"Provisiones Ley (Finiquito)":{"Prima Vac":158.3515682191781,"Aguinaldo":351.02564383561645},"Prevision Social Beneficios":{"Vales":350.0,"Fondo ahorro":213.5406},"Carga Social":{"IMSS":1023.9491770120662,"INFONAVIT":204.62758242897937,"3% ISN":141.26498381589042},"Viaticos y Gastos Operativos":{"Alimento":1890.0,"Hospedaje":1330.0}},"12":{"Salario Base":{"Horas Normales":3050.58,"Importe Septimo día":508.43},"Tiempo Extra":{"Horas Extras Dobles":1143.9675,"Horas Extras Triples":571.98375},"Variables":{"Gratificacion":0.0,"Bono no accidente":26.25},"Provisiones Ley (Finiquito)":{"Prima Vac":158.3515682191781,"Aguinaldo":351.02564383561645},"Prevision Social Beneficios":{"Vales":350.0,"Fondo ahorro":213.5406},"Carga Social":{"IMSS":1080.7857327903173,"INFONAVIT":217.79107292430095,"3% ISN":180.7318625658904},"Viaticos y Gastos Operativos":{"Alimento":1890.0,"Hospedaje":1330.0}},"24":{"Salario Base":{"Horas Normales":3050.58,"Importe Septimo día":508.43},"Tiempo Extra":{"Horas Extras Dobles":1143.9675,"Horas Extras Triples":2859.91875},"Variables":{"Gratificacion":0.0,"Bono no accidente":26.25},"Provisiones Ley (Finiquito)":{"Prima Vac":158.3515682191781,"Aguinaldo":351.02564383561645},"Prevision Social Beneficios":{"Vales":350.0,"Fondo ahorro":213.5406},"Carga Social":{"IMSS":1194.4588443468192,"INFONAVIT":244.11805391494428,"3% ISN":259.66562006589044},"Viaticos y Gastos Operativos":{"Alimento":1890.0,"Hospedaje":1330.0}}},"JEFE GPO":{"0":{"Salario Base":{"Horas Normales":3566.88,"Importe Septimo día":594.48},"Tiempo Extra":{"Horas Extras Dobles":0.0,"Horas Extras Triples":0.0},"Variables":{"Gratificacion":0.0,"Bono no accidente":26.25},"Provisiones Ley (Finiquito)":{"Prima Vac":185.15201753424657,"Aguinaldo":410.4355068493151},"Prevision Social Beneficios":{"Vales":350.0,"Fondo ahorro":249.6816},"Carga Social":{"IMSS":1172.6004660158185,"INFONAVIT":239.05559804541767,"3% ISN":165.0203145912329},"Viaticos y Gastos Operativos":{"Alimento":1890.0,"Hospedaje":1330.0}},"12":{"Salario Base":{"Horas Normales":3566.88,"Importe Septimo día":594.48},"Tiempo Extra":{"Horas Extras Dobles":1337.58,"Horas Extras Triples":668.79},"Variables":{"Gratificacion":0.0,"Bono no accidente":26.25},"Provisiones Ley (Finiquito)":{"Prima Vac":185.15201753424657,"Aguinaldo":410.4355068493151},"Prevision Social Beneficios":{"Vales":350.0,"Fondo ahorro":249.6816},"Carga Social":{"IMSS":1243.1423989160762,"INFONAVIT":255.39328864857524,"3% ISN":214.00410459123287},"Viaticos y Gastos Operativos":{"Alimento":1890.0,"Hospedaje":1330.0}},"24":{"Salario Base":{"Horas Normales":3566.88,"Importe Septimo día":594.48},"Tiempo Extra":{"Horas Extras Dobles":1337.58,"Horas Extras Triples":3343.9500000000003},"Variables":{"Gratificacion":0.0,"Bono no accidente":26.25},"Provisiones Ley (Finiquito)":{"Prima Vac":185.15201753424657,"Aguinaldo":410.4355068493151},"Prevision Social Beneficios":{"Vales":350.0,"Fondo ahorro":249.6816},"Carga Social":{"IMSS":1376.0542871958974,"INFONAVIT":286.1760191312722,"3% ISN":306.29712459123283},"Viaticos y Gastos Operativos":{"Alimento":1890.0,"Hospedaje":1330.0}}}};
+        // Diccionario actualizado con el escenario "20" (68 hrs) y Prima Dominical integrados
+        const tarifas = {
+            "A-1":{
+                "0":{"Salario Base":{"Horas Normales":3050.58,"Importe Septimo día":508.43},"Tiempo Extra":{"Horas Extras Dobles":0.0,"Horas Extras Triples":0.0},"Variables":{"Gratificacion":0.0,"Bono no accidente":26.25,"Prima Dominical":0.0},"Provisiones Ley (Finiquito)":{"Prima Vac":158.3515682191781,"Aguinaldo":351.02564383561645},"Prevision Social Beneficios":{"Vales":350.0,"Fondo ahorro":213.5406},"Carga Social":{"IMSS":1023.9491770120662,"INFONAVIT":204.62758242897937,"3% ISN":141.26498381589042},"Viaticos y Gastos Operativos":{"Alimento":1890.0,"Hospedaje":1330.0}},
+                "12":{"Salario Base":{"Horas Normales":3050.58,"Importe Septimo día":508.43},"Tiempo Extra":{"Horas Extras Dobles":1143.9675,"Horas Extras Triples":571.98375},"Variables":{"Gratificacion":0.0,"Bono no accidente":26.25,"Prima Dominical":0.0},"Provisiones Ley (Finiquito)":{"Prima Vac":158.3515682191781,"Aguinaldo":351.02564383561645},"Prevision Social Beneficios":{"Vales":350.0,"Fondo ahorro":213.5406},"Carga Social":{"IMSS":1080.7857327903173,"INFONAVIT":217.79107292430095,"3% ISN":180.7318625658904},"Viaticos y Gastos Operativos":{"Alimento":1890.0,"Hospedaje":1330.0}},
+                "20":{"Salario Base":{"Horas Normales":3050.58,"Importe Septimo día":508.43},"Tiempo Extra":{"Horas Extras Dobles":1143.97,"Horas Extras Triples":2097.27},"Variables":{"Gratificacion":0.0,"Bono no accidente":26.25,"Prima Dominical":488.09},"Provisiones Ley (Finiquito)":{"Prima Vac":158.3515682191781,"Aguinaldo":351.02564383561645},"Prevision Social Beneficios":{"Vales":350.0,"Fondo ahorro":213.5406},"Carga Social":{"IMSS":1156.56,"INFONAVIT":235.34,"3% ISN":233.35},"Viaticos y Gastos Operativos":{"Alimento":1890.0,"Hospedaje":1330.0}},
+                "24":{"Salario Base":{"Horas Normales":3050.58,"Importe Septimo día":508.43},"Tiempo Extra":{"Horas Extras Dobles":1143.9675,"Horas Extras Triples":2859.91875},"Variables":{"Gratificacion":0.0,"Bono no accidente":26.25,"Prima Dominical":0.0},"Provisiones Ley (Finiquito)":{"Prima Vac":158.3515682191781,"Aguinaldo":351.02564383561645},"Prevision Social Beneficios":{"Vales":350.0,"Fondo ahorro":213.5406},"Carga Social":{"IMSS":1194.4588443468192,"INFONAVIT":244.11805391494428,"3% ISN":259.66562006589044},"Viaticos y Gastos Operativos":{"Alimento":1890.0,"Hospedaje":1330.0}}
+            },
+            "JEFE GPO":{
+                "0":{"Salario Base":{"Horas Normales":3566.88,"Importe Septimo día":594.48},"Tiempo Extra":{"Horas Extras Dobles":0.0,"Horas Extras Triples":0.0},"Variables":{"Gratificacion":0.0,"Bono no accidente":26.25,"Prima Dominical":0.0},"Provisiones Ley (Finiquito)":{"Prima Vac":185.15201753424657,"Aguinaldo":410.4355068493151},"Prevision Social Beneficios":{"Vales":350.0,"Fondo ahorro":249.6816},"Carga Social":{"IMSS":1172.6004660158185,"INFONAVIT":239.05559804541767,"3% ISN":165.0203145912329},"Viaticos y Gastos Operativos":{"Alimento":1890.0,"Hospedaje":1330.0}},
+                "12":{"Salario Base":{"Horas Normales":3566.88,"Importe Septimo día":594.48},"Tiempo Extra":{"Horas Extras Dobles":1337.58,"Horas Extras Triples":668.79},"Variables":{"Gratificacion":0.0,"Bono no accidente":26.25,"Prima Dominical":0.0},"Provisiones Ley (Finiquito)":{"Prima Vac":185.15201753424657,"Aguinaldo":410.4355068493151},"Prevision Social Beneficios":{"Vales":350.0,"Fondo ahorro":249.6816},"Carga Social":{"IMSS":1243.1423989160762,"INFONAVIT":255.39328864857524,"3% ISN":214.00410459123287},"Viaticos y Gastos Operativos":{"Alimento":1890.0,"Hospedaje":1330.0}},
+                "20":{"Salario Base":{"Horas Normales":3566.88,"Importe Septimo día":594.48},"Tiempo Extra":{"Horas Extras Dobles":1337.58,"Horas Extras Triples":2452.23},"Variables":{"Gratificacion":0.0,"Bono no accidente":26.25,"Prima Dominical":570.70},"Provisiones Ley (Finiquito)":{"Prima Vac":185.15201753424657,"Aguinaldo":410.4355068493151},"Prevision Social Beneficios":{"Vales":350.0,"Fondo ahorro":249.68},"Carga Social":{"IMSS":1331.74,"INFONAVIT":275.91,"3% ISN":275.52},"Viaticos y Gastos Operativos":{"Alimento":1890.0,"Hospedaje":1330.0}},
+                "24":{"Salario Base":{"Horas Normales":3566.88,"Importe Septimo día":594.48},"Tiempo Extra":{"Horas Extras Dobles":1337.58,"Horas Extras Triples":3343.95},"Variables":{"Gratificacion":0.0,"Bono no accidente":26.25,"Prima Dominical":0.0},"Provisiones Ley (Finiquito)":{"Prima Vac":185.15201753424657,"Aguinaldo":410.4355068493151},"Prevision Social Beneficios":{"Vales":350.0,"Fondo ahorro":249.6816},"Carga Social":{"IMSS":1376.0542871958974,"INFONAVIT":286.1760191312722,"3% ISN":306.29712459123283},"Viaticos y Gastos Operativos":{"Alimento":1890.0,"Hospedaje":1330.0}}
+            }
+        };
 
         function getFormatter(isUSD) {
             return new Intl.NumberFormat(isUSD ? 'en-US' : 'es-MX', {
@@ -273,7 +289,8 @@
 
             let mode = document.querySelector('input[name="calcMode"]:checked').value;
             let cat = document.getElementById('categoria').value;
-            let base = tarifas[cat];
+            // Fallback en caso de que la categoría no exista aún en el JSON
+            let base = tarifas[cat] || tarifas["JEFE GPO"];
 
             let cantBase = parseInt(document.getElementById('cantidad').value) || 1;
             let semBase = parseInt(document.getElementById('semanas').value) || 1;
@@ -284,12 +301,14 @@
             const costoTransporteTNGSemanal = (36 * 7) / divisor; 
             const costoTransporteOrigen = 3500 / divisor; 
 
-            let escenarios = ["0", "12", "24"];
+            // Se agrega el identificador "20" correspondiente a las 68 Hrs
+            let escenarios = ["0", "12", "20", "24"];
             let semFinal = mode === 'horas' ? projDias / 7 : semBase;
 
             escenarios.forEach(esc => {
                 let d = base[esc];
-                let horasSemanales = esc === "0" ? 48 : (esc === "12" ? 60 : 72);
+                // Asignación de horas según escenario
+                let horasSemanales = esc === "0" ? 48 : (esc === "12" ? 60 : (esc === "20" ? 68 : 72));
                 let cantEscenario = cantBase;
 
                 if (mode === 'horas') {
@@ -320,16 +339,12 @@
 
                 let totalNeto = g1.total + g2.total + g3.total + g4.total + g5.total + g6.total + g7.total;
 
-                // --- ACTUALIZACIÓN DE INDICADORES EN EL PIE DE LA TARJETA ---
-                
-                // 1. Cantidad de trabajadores
+                // --- ACTUALIZACIÓN DE INDICADORES ---
                 document.getElementById(`workers_${esc}`).innerText = `${cantEscenario}`;
                 
-                // 2. Horas Totales
                 let horasTotales = horasSemanales * semFinal * cantEscenario;
                 document.getElementById(`horas_proy_${esc}`).innerText = `${numberFormatter.format(horasTotales)} hrs`;
                 
-                // 3. Costo por Hora (División Directa: Costo Total / Horas Proyectadas)
                 if (horasTotales > 0) {
                     let costoPorHora = totalNeto / horasTotales;
                     document.getElementById(`hora_${esc}`).innerText = currentFormatter.format(costoPorHora);
@@ -337,7 +352,6 @@
                     document.getElementById(`hora_${esc}`).innerText = `$0.00`;
                 }
 
-                // 4. Costo Proyectado (Neto)
                 document.getElementById(`neto_${esc}`).innerText = currentFormatter.format(totalNeto);
             });
         }
